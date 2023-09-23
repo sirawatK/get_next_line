@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: sikulnok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/16 23:12:09 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/09/20 16:34:09 by sikulnok         ###   ########.fr       */
+/*   Created: 2023/09/22 22:10:11 by sikulnok          #+#    #+#             */
+/*   Updated: 2023/09/22 22:10:14 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	found_newline(t_list *lst)
 {

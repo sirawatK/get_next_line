@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: sikulnok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/16 23:09:53 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/09/20 16:32:04 by sikulnok         ###   ########.fr       */
+/*   Created: 2023/09/22 22:10:21 by sikulnok          #+#    #+#             */
+/*   Updated: 2023/09/22 22:10:23 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10

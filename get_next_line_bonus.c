@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: sikulnok <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/17 12:28:25 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/09/20 16:40:24 by sikulnok         ###   ########.fr       */
+/*   Created: 2023/09/22 22:09:59 by sikulnok          #+#    #+#             */
+/*   Updated: 2023/09/22 22:10:01 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 void	creat_list(t_list **lst, int fd)
 {
 	int		byte_read;
 	char	*buffer;
 
-	while (!found_newline(*lst))
+	while (!found_newline(lst[fd]))
 	{
 		buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 		if (!buffer)
 		{
-			ft_lstclear(lst);
+			ft_lstclear(&lst[fd]);
 			return ;
 		}
 		byte_read = read(fd, buffer, BUFFER_SIZE);
 		if (byte_read < 1)
 		{
 			if (byte_read == -1)
-				ft_lstclear(lst);
+				ft_lstclear(&lst[fd]);
 			free(buffer);
 			return ;
 		}
 		buffer[byte_read] = '\0';
-		my_append(lst, buffer);
+		my_append(&lst[fd], buffer);
 	}
 }
 
@@ -122,25 +122,25 @@ int	creat_new_head(t_list **lst)
 
 char	*get_next_line(int fd)
 {
-	static t_list	*lst = NULL;
+	static t_list	*lst[1024];
 	char			*result;
 	int				i;
 
-	if (fd < 0 || BUFFER_SIZE < 1 || read(fd, 0, 0) < 0)
+	if (fd < 0 || fd > 1023 || BUFFER_SIZE < 1 || read(fd, 0, 0) < 0)
 	{
-		ft_lstclear(&lst);
+		ft_lstclear(&lst[fd]);
 		return (NULL);
 	}
-	creat_list(&lst, fd);
-	if (!lst)
+	creat_list(lst, fd);
+	if (!lst[fd])
 		return (NULL);
-	result = get_result(lst);
+	result = get_result(lst[fd]);
 	if (!result)
 	{
-		ft_lstclear(&lst);
+		ft_lstclear(&lst[fd]);
 		return (NULL);
 	}
-	i = creat_new_head(&lst);
+	i = creat_new_head(&lst[fd]);
 	if (!i)
 	{
 		free(result);
