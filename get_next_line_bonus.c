@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sikulnok <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 22:09:59 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/09/22 22:10:01 by sikulnok         ###   ########.fr       */
+/*   Updated: 2023/09/29 09:49:36 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,6 @@ char	*get_next_line(int fd)
 {
 	static t_list	*lst[1024];
 	char			*result;
-	int				i;
 
 	if (fd < 0 || fd > 1023 || BUFFER_SIZE < 1 || read(fd, 0, 0) < 0)
 	{
@@ -140,8 +139,7 @@ char	*get_next_line(int fd)
 		ft_lstclear(&lst[fd]);
 		return (NULL);
 	}
-	i = creat_new_head(&lst[fd]);
-	if (!i)
+	if (!creat_new_head(&lst[fd]))
 	{
 		free(result);
 		return (NULL);

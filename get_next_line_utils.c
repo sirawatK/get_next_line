@@ -6,7 +6,7 @@
 /*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 23:12:09 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/09/20 16:34:09 by sikulnok         ###   ########.fr       */
+/*   Updated: 2023/09/29 09:48:39 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	found_newline(t_list *lst)
 	int		i;
 	t_list	*last_node;
 
-	i = 0;
 	if (!lst)
 		return (0);
+	i = 0;
 	last_node = ft_lstlast(lst);
 	if (!last_node || !last_node->str_buffer)
 		return (0);

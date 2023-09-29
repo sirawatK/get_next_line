@@ -6,7 +6,7 @@
 /*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 12:28:25 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/09/20 16:40:24 by sikulnok         ###   ########.fr       */
+/*   Updated: 2023/09/29 09:56:33 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,6 @@ char	*get_next_line(int fd)
 {
 	static t_list	*lst = NULL;
 	char			*result;
-	int				i;
 
 	if (fd < 0 || BUFFER_SIZE < 1 || read(fd, 0, 0) < 0)
 	{
@@ -140,8 +139,7 @@ char	*get_next_line(int fd)
 		ft_lstclear(&lst);
 		return (NULL);
 	}
-	i = creat_new_head(&lst);
-	if (!i)
+	if (!creat_new_head(&lst))
 	{
 		free(result);
 		return (NULL);

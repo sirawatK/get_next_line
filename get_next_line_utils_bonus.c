@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sikulnok <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 22:10:11 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/09/22 22:10:14 by sikulnok         ###   ########.fr       */
+/*   Updated: 2023/09/29 09:48:56 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	found_newline(t_list *lst)
 	int		i;
 	t_list	*last_node;
 
-	i = 0;
 	if (!lst)
 		return (0);
+	i = 0;
 	last_node = ft_lstlast(lst);
 	if (!last_node || !last_node->str_buffer)
 		return (0);
